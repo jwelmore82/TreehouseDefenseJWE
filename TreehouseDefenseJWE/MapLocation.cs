@@ -15,5 +15,10 @@ namespace TreehouseDefenseJWE
                 throw new OutOfBoundsException(x + "," + y + " is outside the boundries of the map!");
             }
         }
+
+        public bool InRangeOf(MapLocation location, int range)
+        {
+            return DistanceTo(location) <= range;
+        }
     }
 }

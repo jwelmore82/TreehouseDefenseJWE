@@ -27,12 +27,7 @@ namespace TreehouseDefenseJWE
                     }
                 );
 
-                MapLocation location = path.GetLocationAt(0);
 
-                if (location != null)
-                {
-                    Console.WriteLine(location.X + ", " + location.Y);
-                }
             }
             catch (OutOfBoundsException ex)
             {

@@ -8,9 +8,9 @@ namespace TreehouseDefenseJWE
 {
     class Tower
     {
-        private const int _range = 1;
-        private const int _power = 1;
-        private const double _accuracy = .75;
+        protected virtual int Range { get; } = 1;
+        protected virtual int Power { get; } = 1;
+        protected virtual double Accuracy { get; } = .75;
         
 
         private static readonly Random _random = new Random();
@@ -19,7 +19,7 @@ namespace TreehouseDefenseJWE
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < _accuracy;
+            return _random.NextDouble() < Accuracy;
         }
 
         public Tower(MapLocation location, Path path)
@@ -39,12 +39,11 @@ namespace TreehouseDefenseJWE
           
             foreach (Invader invader in invaders)
             {
-                if (invader.IsActive && _location.InRangeOf(invader.Location, _range))
+                if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
                     if (IsSuccessfulShot())
                     {
-                        invader.DecreaseHeath(_power);
-                        Console.WriteLine("Shot at and hit invader!");
+                        invader.DecreaseHeath(Power);
                         if (invader.IsNeutralized)
                         {
                             Console.WriteLine("Neutralized an invader!");

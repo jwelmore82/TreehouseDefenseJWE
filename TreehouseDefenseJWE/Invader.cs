@@ -12,7 +12,9 @@ namespace TreehouseDefenseJWE
 
         private int _pathStep = 0;
 
-        public int Health { get; private set; } = 2;
+        protected virtual int StepSize { get; } = 1;
+
+        public virtual int Health { get; protected set; } = 2;
 
         public bool HasScored { get { return _pathStep >= _path.Length; } }
 
@@ -28,10 +30,11 @@ namespace TreehouseDefenseJWE
             
         }
 
-        public void Move() => _pathStep += 1;
+        public void Move() => _pathStep += StepSize;
 
-        public void DecreaseHeath(int damage)
+        public virtual void DecreaseHeath(int damage)
         {
+            Console.WriteLine("Shot at and hit invader!");
             Health -= damage;
         }
     }

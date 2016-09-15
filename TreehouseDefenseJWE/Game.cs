@@ -29,15 +29,15 @@ namespace TreehouseDefenseJWE
 
                 Invader[] invaders =
                 {
+                    new ShieldedInvader(path),
                     new Invader(path),
-                    new Invader(path),
-                    new Invader(path),
-                    new Invader(path)
+                    new FastInvader(path),
+                    new StrongInvader(path)
                 };
 
                 Tower[] towers =
                 {
-                    new Tower(new MapLocation(1,3,map),path),
+                    new PowerTower(new MapLocation(1,3,map),path),
                     new Tower(new MapLocation(3,3,map),path),
                     new Tower(new MapLocation(5,3,map),path)
                 };

@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace TreehouseDefenseJWE
 {
-    class FastInvader : Invader
+    class BasicInvader : Invader
     {
-        protected override int StepSize { get; } = 2;
-
         public override int Health { get; protected set; } = 2;
 
-        public FastInvader(Path path) : base(path)
+        public BasicInvader(Path path) : base(path)
         {
 
         }

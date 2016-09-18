@@ -24,15 +24,15 @@ namespace TreehouseDefenseJWE
 
         public bool ContainsLocation(MapLocation location)
         {
-            bool onPath = false;
+
             foreach (MapLocation pathStep in _path)
             {
-                if (pathStep.X == location.X && pathStep.Y == location.Y)
+                if (location.Equals(pathStep))
                 {
-                    onPath = true;
+                    return true;
                 }
             }
-            return onPath;
+            return false;
         }
     }
 }

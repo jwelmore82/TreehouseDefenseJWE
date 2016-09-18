@@ -13,13 +13,13 @@ namespace TreehouseDefenseJWE
         protected virtual double Accuracy { get; } = .75;
         
 
-        private static readonly Random _random = new Random();
+       
 
         private readonly MapLocation _location;
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < Accuracy;
+            return Random.NextDouble() < Accuracy;
         }
 
         public Tower(MapLocation location, Path path)
@@ -34,10 +34,10 @@ namespace TreehouseDefenseJWE
             }
         }
 
-        public void FireOnInvaders(Invader[] invaders)
+        public void FireOnInvaders(IInvader[] invaders)
         {
           
-            foreach (Invader invader in invaders)
+            foreach (IInvader invader in invaders)
             {
                 if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
@@ -46,7 +46,7 @@ namespace TreehouseDefenseJWE
                         invader.DecreaseHeath(Power);
                         if (invader.IsNeutralized)
                         {
-                            Console.WriteLine("Neutralized an invader!");
+                            Console.WriteLine("Neutralized an invader at " + invader.Location + "!");
                         }
                     }
                     else

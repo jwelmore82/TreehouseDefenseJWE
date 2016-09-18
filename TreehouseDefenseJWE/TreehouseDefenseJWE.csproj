@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicInvader.cs" />
     <Compile Include="FastInvader.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="IInvader.cs" />
     <Compile Include="Invader.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LongRangeTower.cs" />
@@ -54,6 +56,8 @@
     <Compile Include="Point.cs" />
     <Compile Include="PowerTower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random.cs" />
+    <Compile Include="ResurrectingInvader.cs" />
     <Compile Include="SharpshooterTower.cs" />
     <Compile Include="ShieldedInvader.cs" />
     <Compile Include="SniperTower.cs" />

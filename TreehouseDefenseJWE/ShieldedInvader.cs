@@ -10,6 +10,8 @@ namespace TreehouseDefenseJWE
     {
         private static Random _random = new Random();
 
+        public override int Health { get; protected set; } = 3;
+
         public ShieldedInvader(Path path) : base(path)
         {
 
@@ -17,7 +19,7 @@ namespace TreehouseDefenseJWE
 
         public override void DecreaseHeath(int damage)
         {
-            if (_random.NextDouble() < .5)
+            if (Random.NextDouble() < .5)
             {
                 base.DecreaseHeath(damage);
             }

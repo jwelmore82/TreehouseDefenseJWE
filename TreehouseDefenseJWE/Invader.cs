@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TreehouseDefenseJWE
 {
-    class Invader
+    abstract class Invader : IInvader
     {
         private readonly Path _path;
 
@@ -14,7 +14,7 @@ namespace TreehouseDefenseJWE
 
         protected virtual int StepSize { get; } = 1;
 
-        public virtual int Health { get; protected set; } = 2;
+        public abstract int Health { get; protected set; }
 
         public bool HasScored { get { return _pathStep >= _path.Length; } }
 
